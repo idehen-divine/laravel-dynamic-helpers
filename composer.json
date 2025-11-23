@@ -38,5 +38,10 @@
             "name": "Divine Idehen",
             "email": "idehendivine16@gmail.com"
         }
-    ]
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "format": "pint"
+    }
 }
