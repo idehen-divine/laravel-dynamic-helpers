@@ -1,8 +1,8 @@
 # Laravel Dynamic Helpers
 
-<!-- [![Latest Version](https://img.shields.io/packagist/v/l0n3ly/laravel-dynamic-helpers.svg?style=flat-square)](https://packagist.org/packages/l0n3ly/laravel-dynamic-helpers)
+[![Latest Version](https://img.shields.io/packagist/v/l0n3ly/laravel-dynamic-helpers.svg?style=flat-square)](https://packagist.org/packages/l0n3ly/laravel-dynamic-helpers)
 [![Total Downloads](https://img.shields.io/packagist/dt/l0n3ly/laravel-dynamic-helpers.svg?style=flat-square)](https://packagist.org/packages/l0n3ly/laravel-dynamic-helpers)
-[![License](https://img.shields.io/packagist/l/l0n3ly/laravel-dynamic-helpers.svg?style=flat-square)](https://packagist.org/packages/l0n3ly/laravel-dynamic-helpers) -->
+[![License](https://img.shields.io/packagist/l/l0n3ly/laravel-dynamic-helpers.svg?style=flat-square)](https://packagist.org/packages/l0n3ly/laravel-dynamic-helpers)
 
 A powerful Laravel package that provides a dynamic helper management system with an Artisan command generator. Create, organize, and access your custom helper classes effortlessly.
 
