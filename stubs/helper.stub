@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use L0n3ly\LaravelDynamicHelpers\Helper;
+
+class {{ class }} extends Helper
+{
+    //
+}
+

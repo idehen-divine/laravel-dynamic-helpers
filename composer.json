@@ -1,0 +1,43 @@
+{
+    "name": "l0n3ly/laravel-dynamic-helpers",
+    "description": "Laravel Dynamic Helpers is a package that dynamically resolves helper classes and provides an Artisan command to generate custom helpers in your app/Helpers directory, making helper management effortless and fully automated.",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0|^11.0",
+        "squizlabs/php_codesniffer": "^3.7",
+        "orchestra/testbench": "^9.0|^10.0",
+        "laravel/pint": "^1.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "L0n3ly\\LaravelDynamicHelpers\\Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "L0n3ly\\LaravelDynamicHelpers\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "L0n3ly\\LaravelDynamicHelpers\\HelperServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Divine Idehen",
+            "email": "idehendivine16@gmail.com"
+        }
+    ]
+}
