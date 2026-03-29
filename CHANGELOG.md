@@ -9,27 +9,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- No notable changes yet.
+-
 
 ### Changed
 
-- No notable changes yet.
+-
 
 ### Deprecated
 
-- No notable changes yet.
+-
 
 ### Removed
 
-- No notable changes yet.
+-
 
 ### Fixed
 
-- No notable changes yet.
+-
 
 ### Security
 
-- No notable changes yet.
+-
+
+## [1.3.0] - 2026-03-29
+
+### Added
+
+- Added support for Laravel 13 with compatible constraint ranges.
+- Added Laravel version compatibility matrix CI workflow for testing Laravel 10, 11, 12, and 13.
+
+### Changed
+
+- Updated Testbench constraint to include v11.0 for Laravel 13.
+- Updated project documentation to reflect Laravel 13 support.
 
 ## [1.2.0] - 2026-03-29
 
@@ -63,7 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial package release.
 
-[Unreleased]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/releases/tag/v1.0.0
