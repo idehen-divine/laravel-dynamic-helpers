@@ -3,6 +3,7 @@
 namespace L0n3ly\LaravelDynamicHelpers;
 
 use Illuminate\Support\ServiceProvider;
+use L0n3ly\LaravelDynamicHelpers\Console\GenerateIdeHelperCommand;
 use L0n3ly\LaravelDynamicHelpers\Console\MakeHelperCommand;
 
 class HelperServiceProvider extends ServiceProvider
@@ -49,11 +50,30 @@ class HelperServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Register artisan command
         if ($this->app->runningInConsole()) {
+            $this->addToGitignore('_ide_helper_helpers.php');
+
             $this->commands([
                 MakeHelperCommand::class,
+                GenerateIdeHelperCommand::class,
             ]);
         }
+    }
+
+    protected function addToGitignore(string $entry): void
+    {
+        $gitignorePath = base_path('.gitignore');
+
+        if (! file_exists($gitignorePath)) {
+            return;
+        }
+
+        $contents = file_get_contents($gitignorePath);
+
+        if (str_contains($contents, $entry)) {
+            return;
+        }
+
+        file_put_contents($gitignorePath, rtrim($contents)."\n".$entry."\n");
     }
 }
