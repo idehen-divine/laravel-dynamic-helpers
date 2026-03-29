@@ -35,13 +35,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added support for Laravel 13 with compatible constraint ranges.
-- Added Laravel version compatibility matrix CI workflow for testing Laravel 10, 11, 12, and 13.
+- Full support for Laravel 13 with comprehensive CI testing matrix.
+- Added Laravel version compatibility matrix CI workflow for testing Laravel 11, 12, and 13.
 
 ### Changed
 
+- Updated minimum Laravel version from 10.0 to 11.0.
+- Updated CI matrix to test Laravel 11, 12, and 13.
 - Updated Testbench constraint to include v11.0 for Laravel 13.
 - Updated project documentation to reflect Laravel 13 support.
+
+### Removed
+
+- Dropped support for Laravel 10. Package now requires Laravel 11 or higher.
 
 ## [1.2.0] - 2026-03-29
 
