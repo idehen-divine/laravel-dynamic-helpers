@@ -19,7 +19,7 @@ A powerful Laravel package that provides a dynamic helper management system with
 
 ## 📋 Requirements
 
-- PHP >= 8.1
+- PHP >= 8.2
 - Laravel >= 10.0 (10, 11, 12, 13)
 
 ## 📦 Installation
