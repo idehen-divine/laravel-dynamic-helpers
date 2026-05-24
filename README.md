@@ -14,8 +14,8 @@ A powerful Laravel package that provides a dynamic helper management system with
 - 🔄 **Singleton Pattern** - Efficient instance caching for better performance
 - 🎨 **Laravel-Style Output** - Beautiful command output matching Laravel's conventions
 - 🔌 **Auto-Discovery** - Service provider automatically registered
-- 💡 **Dual Access Patterns** - Use `moneyHelper()` or `helpers()->moneyHelper()`
-- 🧠 **IDE Autocompletion** - Generate IDE helper file with `php artisan helpers:ide` for full method autocomplete
+- 💡 **Direct Function Access** - Use `moneyHelper()` for real global functions with IDE autocomplete
+- ⚡ **Auto-Booted** - Functions automatically registered at service provider boot time
 
 ## 📋 Requirements
 
@@ -65,13 +65,17 @@ class MoneyHelper extends Helper
 
 ### 2. Use Your Helper
 
-You can access your helper in two ways:
+The package automatically registers global functions for all your helpers at boot time. You can access them directly:
 
 ```php
-// Direct global function (recommended)
+// Direct global function (automatic, with IDE autocomplete)
 moneyHelper()->format(1000); // "1,000.00"
 moneyHelper()->toMinor(1500); // 150000
+```
 
+You can also access helpers through the `helpers()` function if preferred:
+
+```php
 // Via helpers() function
 helpers()->moneyHelper()->format(2000); // "2,000.00"
 ```
@@ -215,52 +219,12 @@ class ApiHelper extends Helper
 }
 ```
 
-## 💡 IDE Autocompletion
-
-The package includes an IDE helper generator so your editor understands what `helpers()->storeCreateHelper()` returns and can autocomplete methods on it.
-
-### Generate the IDE helper file
-
-```bash
-php artisan helpers:ide
-```
-
-This creates `_ide_helper_helpers.php` in your project root. The file is automatically added to your `.gitignore` on first run.
-
-> **Note:** `php artisan make:helper` automatically regenerates this file for you. You only need to run it manually when you create or delete helper files without using the artisan command.
-
-### Keep it in sync automatically (recommended)
-
-Add this to your app's `composer.json` so it also regenerates whenever you run `composer install`, `composer update`, or `composer dump-autoload`:
-
-```json
-"scripts": {
-    "post-autoload-dump": [
-        "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-        "@php artisan package:discover --ansi",
-        "@php artisan helpers:ide --ansi || true"
-    ]
-}
-```
-
 ## 📖 Command Reference
 
 ### Create a Helper
 
 ```bash
 php artisan make:helper HelperName
-```
-
-### Generate IDE Helper
-
-```bash
-php artisan helpers:ide
-```
-
-Custom output path:
-
-```bash
-php artisan helpers:ide --output=ide_helpers.php
 ```
 
 ### Create Nested Helper
