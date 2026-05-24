@@ -20,6 +20,12 @@ class Helper
         return self::$instance ??= new static;
     }
 
+    public static function __callStatic($method, $arguments)
+    {
+        $instance = app(static::class);
+        return $instance->$method(...$arguments);
+    }
+
     public function __call($name, $arguments)
     {
         // Try direct path first: App\Helpers\{Name}

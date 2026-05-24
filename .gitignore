@@ -61,4 +61,4 @@ tests/workbench/app/Helpers/
 *.tmp
 *.temp
 .cache/
-
+.history/

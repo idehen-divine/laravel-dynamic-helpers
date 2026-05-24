@@ -31,6 +31,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [2.0.0] - 2026-05-24
+
+### Added
+
+- Real PHP functions auto-created for each helper class at boot time (not just IDE hints)
+- Dynamic helper registration from `app/Helpers` directory with nested path support (e.g., `Store/TenantHelper.php` → `storeTenantHelper()` global function)
+- Automatic IDE file generation at boot time: generates `.phpstorm.meta.php` for PhpStorm and `_ide_helper.php` for IDE introspection
+- Static method access pattern via `__callStatic` magic method (e.g., `MoneyHelper::format(100)`)
+- Three access patterns for maximum flexibility: global functions (`moneyHelper()`), static calls (`MoneyHelper::format(100)`), and proxy methods (`helpers()->moneyHelper()`)
+- Laravel Boost integration with helper creation skill and core guidelines documentation
+
+### Changed
+
+- Helper function registration moved from static registration to dynamic boot-time discovery
+- Service provider now generates real PHP functions (via `eval`) instead of relying on IDE hints alone
+- IDE files generated automatically at every boot cycle to stay in sync with filesystem changes
+- Helper base class uses magic methods (`__call` and `__callStatic`) for flexible method forwarding
+
+### Removed
+
+- BREAKING: Removed `helpers:ide` Artisan command (no longer needed—helpers are generated automatically at boot)
+- Removed `GenerateIdeHelperCommand` class (functionality moved to service provider boot cycle)
+
 ## [1.3.0] - 2026-03-29
 
 ### Added
@@ -81,7 +104,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial package release.
 
-[Unreleased]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.3.0...v2.0.0
 [1.3.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/l0n3ly/laravel-dynamic-helpers/compare/v1.0.0...v1.1.0
