@@ -71,8 +71,6 @@ class MakeHelperCommand extends Command
         $this->components->info("Helper [{$relativePath}] created successfully.");
         $this->components->info("You can now access it using {$accessName}(); or helpers()->{$accessName}();");
 
-        $this->callSilently('helpers:ide');
-
         return Command::SUCCESS;
     }
 }
